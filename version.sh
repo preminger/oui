@@ -2,7 +2,7 @@
 
 # Version argument, should be something like '0.0.1'. Will be added to '.version' file.
 VER="$1"
-# Value to use as the git tag. Will end up being somethig like 'v0.0.1'.
+# Value to use as the git tag. Will end up being something like 'v0.0.1'.
 TAG=$VER
 # Version file full path.
 FILE="$(pwd)/.version"
@@ -11,9 +11,9 @@ CURRENT_TAG=$(git describe --abbrev=0 --tags 2>/dev/null)
 
 DIFF="$(git --no-pager diff)"
 
-[ ! -f $FILE ] && touch $FILE
+[ ! -f "$FILE" ] && touch "$FILE"
 
-CURRENT="$(cat $FILE)"
+CURRENT="$(cat "$FILE")"
 
 # Ensure there are no unstaged changes.
 if [[ $DIFF != "" ]]; then
@@ -42,7 +42,9 @@ if [[ "$CURRENT" == "$VER" ]]; then
     echo "Version is already $VER"
     exit 1
 elif [[ "$CURRENT_TAG" == "$TAG" ]]; then
-    git_del_tag="$(git tag -d $TAG 1>/dev/null 2>&1)"
+    # shellcheck disable=SC2327
+    # shellcheck disable=SC2328
+    git_del_tag="$(git tag -d "$TAG" 1>/dev/null 2>&1)"
 
     if [[ "$git_del_tag" != "" ]]; then
         echo -e "Error deleting git tag $TAG:\n$git_del_tag"
@@ -50,10 +52,12 @@ elif [[ "$CURRENT_TAG" == "$TAG" ]]; then
     fi
 fi
 
-echo $VER >$FILE
+echo "$VER" >"$FILE"
 echo "Added version $VER to $FILE"
 
-GIT_ADD_ERR="$(git add $FILE 1>/dev/null 2>&1)"
+# shellcheck disable=SC2327
+# shellcheck disable=SC2328
+GIT_ADD_ERR="$(git add "$FILE" 1>/dev/null 2>&1)"
 
 # Print any errors from git and exit.
 if [[ "$GIT_ADD_ERR" != "" ]]; then
@@ -61,6 +65,8 @@ if [[ "$GIT_ADD_ERR" != "" ]]; then
     exit 1
 fi
 
+# shellcheck disable=SC2327
+# shellcheck disable=SC2328
 GIT_COMMIT_ERR="$(git commit -m "Release $TAG" 1>/dev/null 2>&1)"
 
 # Print any errors from git and exit.
@@ -70,7 +76,7 @@ if [[ "$GIT_COMMIT_ERR" != "" ]]; then
 fi
 
 # Capture stderr from adding git tag.
-GIT_TAG_ERR="$(git tag $TAG -m $TAG 2>&1)"
+GIT_TAG_ERR="$(git tag "$TAG" -m "$TAG" 2>&1)"
 
 # Print any errors from git and exit.
 if [[ "$GIT_TAG_ERR" != "" ]]; then
