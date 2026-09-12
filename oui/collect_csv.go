@@ -14,12 +14,16 @@ import (
 	"github.com/thatmattlove/go-macaddr"
 )
 
+const (
+	workingUserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36"
+)
+
 func fetchCSV(client *http.Client, registry *Registry) (io.ReadCloser, error) {
 	req, err := http.NewRequest(http.MethodGet, registry.URL().String(), nil)
 	if err != nil {
 		return nil, err
 	}
-	req.Header.Set("user-agent", "oui")
+	req.Header.Set("user-agent", workingUserAgent)
 	res, err := client.Do(req)
 	if err != nil {
 		if os.IsTimeout(err) {
