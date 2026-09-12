@@ -6,10 +6,10 @@
    <b>MAC Address CLI Toolkit</b>
    <br/>
    <br/>
-    <a href="https://github.com/thatmattlove/oui/actions/workflows/test.yml">
+    <a href="https://github.com/preminger/oui/actions/workflows/test.yml">
         <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/thatmattlove/oui/test.yml?style=for-the-badge">
     </a>
-    <a href="https://github.com/thatmattlove/oui/releases">
+    <a href="https://github.com/preminger/oui/releases">
         <img alt="GitHub release (latest SemVer)" src="https://img.shields.io/github/v/release/thatmattlove/oui?label=version&style=for-the-badge">
     </a>
    <br/>

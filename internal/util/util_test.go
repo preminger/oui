@@ -5,8 +5,8 @@ import (
 	"reflect"
 	"testing"
 
+	"github.com/preminger/oui/v2/internal/util"
 	"github.com/stretchr/testify/assert"
-	"github.com/thatmattlove/oui/v2/internal/util"
 )
 
 func Test_removeComments(t *testing.T) {

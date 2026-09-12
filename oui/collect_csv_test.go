@@ -3,10 +3,10 @@ package oui_test
 import (
 	"testing"
 
+	"github.com/preminger/oui/v2/internal/logger"
+	"github.com/preminger/oui/v2/oui"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/thatmattlove/oui/v2/internal/logger"
-	"github.com/thatmattlove/oui/v2/oui"
 )
 
 func Test_CollectAll(t *testing.T) {

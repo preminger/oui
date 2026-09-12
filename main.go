@@ -6,7 +6,7 @@ import (
 	"os"
 	"regexp"
 
-	"github.com/thatmattlove/oui/v2/cmd"
+	"github.com/preminger/oui/v2/cmd"
 )
 
 func isPiped() bool {

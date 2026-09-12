@@ -34,7 +34,7 @@ changelog:
 
 homebrew_casks:
   - name: oui
-    homepage: https://github.com/thatmattlove/oui
+    homepage: https://github.com/preminger/oui
     description: MAC Address CLI Toolkit
     license: BSD-3-Clause-Clear
     commit_author:
@@ -47,7 +47,7 @@ homebrew_casks:
 
 nfpms:
   - id: linux_packages
-    homepage: https://github.com/thatmattlove/oui
+    homepage: https://github.com/preminger/oui
     maintainer: Matt Love <matt@mdl.wtf>
     description: MAC Address CLI Toolkit
     license: BSD-3-Clause-Clear

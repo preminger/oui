@@ -9,8 +9,8 @@ import (
 	"strings"
 
 	"github.com/gookit/gcli/v3/progress"
+	"github.com/preminger/oui/v2/internal/util"
 	"github.com/thatmattlove/go-macaddr"
-	"github.com/thatmattlove/oui/v2/internal/util"
 )
 
 type OUIDB struct {

@@ -1,4 +1,4 @@
-module github.com/thatmattlove/oui/v2
+module github.com/preminger/oui/v2
 
 go 1.27.1
 

@@ -12,7 +12,7 @@ import (
 	"path/filepath"
 
 	_ "github.com/lib/pq"
-	"github.com/thatmattlove/oui/v2/internal/util"
+	"github.com/preminger/oui/v2/internal/util"
 	_ "modernc.org/sqlite"
 )
 
