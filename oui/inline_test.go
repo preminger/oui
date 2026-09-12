@@ -63,7 +63,7 @@ func Test_WithInlineBulkInsert(t *testing.T) {
 func Test_InlineBulkInsert(t *testing.T) {
 	mkDefs := func(n int, org string) []*VendorDef {
 		defs := make([]*VendorDef, 0, n)
-		for i := 0; i < n; i++ {
+		for i := range n {
 			defs = append(defs, &VendorDef{
 				Prefix:   fmt.Sprintf("00:28:%02x:00:00:00/24", i),
 				Length:   24,

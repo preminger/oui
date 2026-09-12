@@ -15,10 +15,10 @@ func (v *VendorDef) PrefixString() string {
 }
 
 type LoggerType interface {
-	Success(s string, f ...interface{})
-	Info(s string, f ...interface{})
-	Warn(s string, f ...interface{})
-	Error(s string, f ...interface{})
+	Success(s string, f ...any)
+	Info(s string, f ...any)
+	Warn(s string, f ...any)
+	Error(s string, f ...any)
 	Err(err error, strs ...string)
 }
 

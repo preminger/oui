@@ -176,10 +176,9 @@ func (ouidb *OUIDB) BulkInsert(defs []*VendorDef) (int64, error) {
 
 	for _, split := range splitDefs {
 		placeholders := make([]string, 0, len(split))
-		args := make([]interface{}, 0, len(split)*4)
+		args := make([]any, 0, len(split)*4)
 		i := 0
 		for _, def := range split {
-			def := def
 			var placeholder string
 			switch ouidb.dialect {
 			case dialectSqlite:
